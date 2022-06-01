@@ -1,0 +1,39 @@
+def RLE1(array):
+    cnt = 1
+    n = 1
+    num = array[n]
+    tab = []
+    for i in array:
+        if n < len(array):
+            num = array[n]
+            if i == num:
+                cnt += 1
+            else:
+                tab.append(cnt)
+                cnt = 1
+            n += 1
+    return tab
+
+def RLE(array):
+    cnt = 1
+    n = 1
+    num = array[n]
+    tab = []
+    for i in array:
+        if n < len(array):
+            num = array[n]
+            if i == num:
+                cnt += 1
+            else:
+                tab.append(cnt)
+                cnt = 1
+            n += 1
+        else:
+            tab.append(cnt)
+            break
+    return tab
+
+
+
+arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 0, 1, 0, 1]
+print(RLE(arr))
