@@ -1,0 +1,14 @@
+def rgb(r, g, b):
+    ar = [r, g, b]
+    a = 0
+    for i in ar:
+        if i >= 255:
+            ar[a] = 255
+        elif i < 255 and i>0:
+            ar[a] = ar[a]
+        else: ar[a] = 0
+        ar[a] = str(hex(ar[a])[2:].upper())
+        if i < 9:
+            ar[a] = "0" + str(ar[a])
+        a += 1
+    return "".join(ar)
