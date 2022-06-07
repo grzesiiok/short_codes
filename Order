@@ -1,0 +1,25 @@
+'''Exanples
+"is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+"4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+'''
+
+def order(sentence):
+    sentence = sentence.split()
+    tab = []
+    for i in sentence:
+        for n in i:
+            if ord(n) >= 49 and ord(n) <= 57:
+                tab.append(n)
+    k = 0
+    tab2 = []
+    for j in sentence:
+        j = tab[k] + j
+        k+=1
+        tab2.append(j)
+    tab2 = sorted(tab2)
+    j = 0
+    tab = []
+    for j in tab2:
+        j = j[1:]
+        tab.append(j)
+    return " ".join(tab)
