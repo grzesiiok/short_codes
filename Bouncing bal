@@ -1,0 +1,28 @@
+'''
+A child is playing with a ball on the nth floor of a tall building. The height of this floor, h, is known.
+
+He drops the ball out of the window. The ball bounces (for example), to two-thirds of its height (a bounce of 0.66).
+
+His mother looks out of a window 1.5 meters from the ground.
+
+How many times will the mother see the ball pass in front of her window (including when it's falling and bouncing?
+
+- h = 3, bounce = 0.66, window = 1.5, result is 3
+
+- h = 3, bounce = 1, window = 1.5, result is -1 
+'''
+
+
+
+def bouncing_ball(h, bounce, window):
+    n = h*bounce
+    num = 1
+    if bounce < 1 and h>window and h*bounce*window>0:
+        if n!= window:
+            while (n >= window):
+                num += 1
+                n = n * bounce
+                num += 1
+            return num
+        else: return 1
+    else: return -1
